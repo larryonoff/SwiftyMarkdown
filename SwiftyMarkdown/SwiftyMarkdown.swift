@@ -138,6 +138,7 @@ enum LineStyle : Int {
 		h5.fontSize = size
 		h6.fontSize = size
 		body.fontSize = size
+		bold.fontSize = size
 		italic.fontSize = size
 		code.fontSize = size
 		link.fontSize = size
@@ -151,6 +152,7 @@ enum LineStyle : Int {
 		h5.color = color
 		h6.color = color
 		body.color = color
+		bold.color = color
 		italic.color = color
 		code.color = color
 		link.color = color
@@ -164,6 +166,7 @@ enum LineStyle : Int {
 		h5.fontName = name
 		h6.fontName = name
 		body.fontName = name
+		bold.fontName = name
 		italic.fontName = name
 		code.fontName = name
 		link.fontName = name
@@ -427,7 +430,7 @@ enum LineStyle : Int {
 			break
 		}
 		
-		// Check for code
+		// Check for code, link, bold or italic
 		
 		if style == .code {
 			fontName = code.fontName
@@ -440,7 +443,19 @@ enum LineStyle : Int {
 			fontSize = link.fontSize
 			attributes[NSAttributedStringKey.foregroundColor] = link.color
 		}
-		
+
+		if style == .bold {
+			fontName = bold.fontName
+			fontSize = bold.fontSize
+			attributes[NSAttributedStringKey.foregroundColor] = bold.color
+		}
+
+		if style == .italic {
+			fontName = italic.fontName
+			fontSize = italic.fontSize
+			attributes[NSAttributedStringKey.foregroundColor] = italic.color
+		}
+
 		// Fallback to body
 		if let _ = fontName {
 			
