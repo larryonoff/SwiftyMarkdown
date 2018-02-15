@@ -445,13 +445,11 @@ enum LineStyle : Int {
 		}
 
 		if style == .bold {
-			fontName = bold.fontName
 			fontSize = bold.fontSize
 			attributes[NSAttributedStringKey.foregroundColor] = bold.color
 		}
 
 		if style == .italic {
-			fontName = italic.fontName
 			fontSize = italic.fontSize
 			attributes[NSAttributedStringKey.foregroundColor] = italic.color
 		}
