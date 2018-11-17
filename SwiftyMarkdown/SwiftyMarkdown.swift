@@ -446,12 +446,12 @@ enum LineStyle : Int {
 
 		if style == .bold {
 			fontSize = bold.fontSize
-			attributes[NSAttributedStringKey.foregroundColor] = bold.color
+			attributes[NSAttributedString.Key.foregroundColor] = bold.color
 		}
 
 		if style == .italic {
 			fontSize = italic.fontSize
-			attributes[NSAttributedStringKey.foregroundColor] = italic.color
+			attributes[NSAttributedString.Key.foregroundColor] = italic.color
 		}
 
 		// Fallback to body
